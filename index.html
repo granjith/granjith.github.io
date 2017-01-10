@@ -32,7 +32,7 @@
       <div ng-controller="homeController as hc">
       <button ng-click="hc.createNewForm()" class="btn btn-success">Add New</button>
       <br>
-        <div ng-include="'./assets/partials/_newBlogForm.html'"></div>
+        <div ng-include="'./assets/partials/newBlogForm.html'"></div>
       Title = {{hc.blog.blogTitle}}
       <br>
       Author Name = {{hc.blog.authorName}}
@@ -42,7 +42,7 @@
         <!-- Left Layout -->
         <div class="col-md-8" >
           <!-- My first blog -->
-           <div ng-include="'./assets/partials/_leftLayout.html'"></div>    
+           <div ng-include="'./assets/partials/leftLayout.html'"></div>
           <pre>{{ hc.blogContent  }}</pre>
         </div>
         <!-- Right Side bar -->
