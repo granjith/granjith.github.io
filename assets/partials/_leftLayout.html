@@ -1,0 +1,9 @@
+<div ng-repeat="blog in hc.blogContent" >
+            <div ng-show="{{blog.published}} == true">
+              <h2>{{ blog.title | uppercase }}</h2>
+              <p>{{  blog.createdDate }} <a href="#">{{ blog.author | lowercase}}</a></p>
+              <p>{{ blog.content }}
+              </p>
+              <hr>
+            </div>
+          </div><!-- /.blog-post -->  
