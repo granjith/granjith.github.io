@@ -1,85 +1,49 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="myBlog">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>My Blog</title>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+      <title>My Blog</title>
 
-  <!-- Bootstrap -->
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+      <!-- Bootstrap -->
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
-  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
+      <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+          <![endif]-->
     </head>
     <body>
+        <!--Top Navigation Bar-->
+        <div ng-include="'./assets/partials/navbar.html'"></div>
 
-    <div ng-include="'./assets/partials/navbar.html'">
-
-    </div>  
-    <div class= "container">
-      <div>
-        <h1 class= "user"> My Blog</h1>
-        <p>My Personal Blog </p>
-      </div>
-
-      <div ng-controller="homeController as hc">
-      <button ng-click="hc.createNewForm()" class="btn btn-success">Add New</button>
-      <br>
-        <div ng-include="'./assets/partials/newBlogForm.html'"></div>
-      Title = {{hc.blog.blogTitle}}
-      <br>
-      Author Name = {{hc.blog.authorName}}
-      <br>
-      Content = {{hc.blog.enteredText}}
-      <div class="row">
-        <!-- Left Layout -->
-        <div class="col-md-8" >
-          <!-- My first blog -->
-           <div ng-include="'./assets/partials/leftLayout.html'"></div>
-          <pre>{{ hc.blogContent  }}</pre>
-        </div>
-        <!-- Right Side bar -->
-        <div class="col-md-4">
-
-          <div>
-            <h4>About</h4>
-            <a href="./index.html">
-              <button>click me</button>
-            </a>
-            <img src="./assets/img/Penguins.jpg" alt="it's me" class="img-circle myimage">
-
-
-            <p>This is my personal blog, it is created as part of our workshop</p>
-            <div>
-              <h4>Archives</h4>
-              <ol class="list-unstyled">
-                <li><a href="#">July 2017</a></li>    
-                <li><a href="#">June 2016</a></li>
-                <li><a href="#">May 2016</a></li>
-                <li><a href="#">April 2016</a></li>
-              </ol>
+        <!--Container/body-->
+        <div class= "container">
+          <div class="row" >
+            <!-- Left Layout -->
+            <div class="col-md-8" >
+              <!-- My first blog -->
+              <div ng-view class="user"></div>
             </div>
-          </div>
+            <!--Right side bar-->
+            <div class="col-md-4">
+              <div ng-include="'./assets/partials/navbar.html'"></div>
+            </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/angular.min.js"></script>
-  <script src="assets/js/angular-route.min.js"></script>
-  <script src="assets/js/angular/blog.js"></script>
-  <script src="assets/js/angular/app.js"></script>
-  <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="assets/js/bootstrap.min.js"></script>
-</body>
-</body>
+      <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+      <script src="assets/js/jquery.min.js"></script>
+      <script src="assets/js/angular.js"></script>
+      <script src="assets/js/angular-route.min.js"></script>
+      <script src="blog.js"></script>
+      <script src="app.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="assets/js/bootstrap.min.js"></script>
+    </body>
 </html>

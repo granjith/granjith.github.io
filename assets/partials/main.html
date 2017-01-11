@@ -1,0 +1,29 @@
+<!--Blog Header-->
+<div>
+    <h1> My Blog</h1>
+    <p>My Personal Blog </p>
+</div>
+
+<!--New Blog Form-->
+<div>
+    <button ng-click="hc.createNewForm()" class="btn btn-success">Add New</button>
+    <br>
+    <div ng-include="'./assets/partials/newBlogForm.html'"></div>
+    Title = {{hc.blog.blogTitle}}
+    <br>
+    Author Name = {{hc.blog.authorName}}
+    <br>
+    Content = {{hc.blog.enteredText}}
+</div>
+
+<!--Blog content-->
+<div ng-repeat="blog in hc.blogContent" >
+    <div ng-show="{{ blog.published  == 'true' }}">
+        <h2>{{ blog.title | uppercase }}</h2>
+        <p>{{  blog.createdDate }} <a href="#">{{ blog.author | lowercase}}</a></p>
+        <p>{{ blog.content }}</p>
+        <hr>
+    </div>
+</div><!-- /.blog-post -->
+
+<pre>{{ hc.blogContent  }}</pre>
